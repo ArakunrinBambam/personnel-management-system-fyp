@@ -9,6 +9,7 @@ use App\Models\Configuration\State;
 use App\Models\PersonnelManagement\NextOfKin;
 use App\Models\PersonnelManagement\Personnel;
 use App\Models\Title;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -252,7 +253,7 @@ class PersonnelController extends Controller
         $updatePersonnel = $personnel->update($data);
 
 
-        return redirect('/personnel/show/1')->with('success', "Personnel Basic Detail Updated Successfully");
+        return redirect('/personnel/show/'.$personnel->id)->with('success', "Personnel Basic Detail Updated Successfully");
 
 
 
@@ -311,5 +312,24 @@ class PersonnelController extends Controller
             return response()->json(['success' => true, "message" => "Personnel Found", "data" => $personnel]);
         }
             return response()->json(['success' => false, "message" => "Personnel Not Found", "data" => []]);
+    }
+
+
+    public function getRetiringPersonnel()
+    {
+        $from = Carbon::today()->subYear(58);
+
+        $retiringbyage = Personnel::with('department.faculty','establishment')->where('date_of_birth','<=',$from)->get();
+
+
+        $sfrom = Carbon::today()->subYear(33);
+
+        $retiringbyservice = Personnel::with('department.faculty','establishment')->where('date_of_first_appointment','<=',$sfrom)->get();
+
+        return view('personnel.retiring', compact(['retiringbyage', 'retiringbyservice']));
+
+
+
+
     }
 }

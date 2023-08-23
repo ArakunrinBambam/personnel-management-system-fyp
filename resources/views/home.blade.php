@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col-12 col-xl-8 mb-4 mb-xl-0">
             <h3 class="font-weight-bold">Hi {{ Auth::user()->name }}</h3>
-            <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">3 unread alerts!</span></h6>
+            <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">{{  $total_no_of_pending_application }} pending applications!</span></h6>
           </div>
 
         </div>

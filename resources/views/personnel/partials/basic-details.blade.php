@@ -7,7 +7,7 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img @if(!$personnel->passport) src="{{asset('assets/images/no-image.png')}}" @else src="{{ asset('/passports/'.$personnel->passport)}}" @endif alt="{{$personnel->surname}}" class="rounded-circle" width="150">
                     <div class="mt-3">
-                      <h4>{{ $personnel->surname}}, {{$personnel->firstname}} {{$personnel->middlename}}</h4>
+                      <h4>{{ $personnel->surname}}, {{$personnel->firstname}} {{$personnel->middlename}} </h4>
                       <p class="text-secondary mb-1">
                         Title: @foreach ($personnel->title as $title)
                             {{$title}} &nbsp;

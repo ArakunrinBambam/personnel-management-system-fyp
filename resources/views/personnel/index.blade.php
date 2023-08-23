@@ -37,6 +37,10 @@
     $(function () {
 
       var table = $('.data-table').DataTable({
+          dom: 'Bfrtip',
+          buttons: [
+                'print'
+            ],
           processing: true,
           serverSide: true,
           ajax: "{{ route('personnel.index') }}",

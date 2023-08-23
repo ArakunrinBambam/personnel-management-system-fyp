@@ -27,7 +27,7 @@
         </a>
         <div class="collapse" id="form-elements">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="#">Manage Users</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('user.index')}}">Manage Users</a></li>
           </ul>
         </div>
       </li>
@@ -42,6 +42,8 @@
             <li class="nav-item"> <a class="nav-link" href="{{ route('personnel.create')}}">Add New Personnel</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{ route('personnel.index')}}">View All Personnel</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{ route('personnel.promotion')}}">Promotions</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('personnel.retiring')}}">Retiring Soon List</a></li>
+
           </ul>
         </div>
       </li>
@@ -58,7 +60,7 @@
           </ul>
         </div>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
           <i class="icon-contract menu-icon"></i>
           <span class="menu-title">Report Management &nbsp;</span>
@@ -69,6 +71,6 @@
             <li class="nav-item"> <a class="nav-link" href="#">Mdi icons</a></li>
           </ul>
         </div>
-      </li>
+      </li> --}}
     </ul>
   </nav>

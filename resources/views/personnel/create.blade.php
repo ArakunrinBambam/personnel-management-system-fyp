@@ -133,7 +133,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Date of Birth</label>
                       <div class="col-sm-9">
-                        <input name="date_of_birth" class="form-control form-control-sm @error('date_of_birth') is-invalid @enderror" value="{{ old('date_of_birth') }}" placeholder="YYYY-mm-dd"/>
+                        <input name="date_of_birth" type="date" class="form-control form-control-sm @error('date_of_birth') is-invalid @enderror" value="{{ old('date_of_birth') }}" pattern="\d{4}-\d{2}-d{2}" placeholder="YYYY-mm-dd"/>
                             @error('date_of_birth')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -370,7 +370,7 @@
                         <div class="form-group row">
                           <label class="col-sm-6 col-form-label">Date of First Appointment</label>
                           <div class="col-sm-6">
-                            <input name="date_of_first_appointment" class="form-control form-control-sm @error('date_of_first_appointment') is-invalid @enderror" value="{{ old('date_of_first_appointment') }}" placeholder="YYYY-mm-dd"/>
+                            <input name="date_of_first_appointment" type="date" class="form-control form-control-sm @error('date_of_first_appointment') is-invalid @enderror" value="{{ old('date_of_first_appointment') }}" pattern="\d{4}-\d{2}-d{2}" placeholder="YYYY-mm-dd"/>
                                 @error('date_of_first_appointment')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -383,7 +383,7 @@
                         <div class="form-group row">
                           <label class="col-sm-5 col-form-label">Date of Confirmation</label>
                           <div class="col-sm-7">
-                            <input name="date_of_confirmation" class="form-control form-control-sm @error('date_of_confirmation') is-invalid @enderror" value="{{ old('date_of_confirmation') }}" placeholder="YYYY-mm-dd"/>
+                            <input name="date_of_confirmation" type="date" class="form-control form-control-sm @error('date_of_confirmation') is-invalid @enderror" value="{{ old('date_of_confirmation') }}" pattern="\d{4}-\d{2}-d{2}" placeholder="YYYY-mm-dd"/>
                                 @error('date_of_confirmation')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

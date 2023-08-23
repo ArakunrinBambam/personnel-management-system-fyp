@@ -8,6 +8,7 @@ use App\Models\Configuration\Department;
 use App\Models\Configuration\Establishment;
 use App\Models\Configuration\Faculty;
 use App\Models\Configuration\LGA;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -101,6 +102,16 @@ class Personnel extends Model
     public function applications()
     {
         return $this->hasMany(Application::class);
+    }
+
+    public function getAgeAttribute()
+    {
+        return Carbon::parse($this->attributes['date_of_birth'])->age;
+    }
+
+    public function getServiceYearsAttribute()
+    {
+        return Carbon::parse($this->attributes['date_of_first_appointment'])->age;
     }
 
 }

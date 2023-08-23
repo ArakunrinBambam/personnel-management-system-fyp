@@ -114,3 +114,14 @@ Route::get('department/show/{department}', [App\Http\Controllers\DepartmentContr
 Route::delete('department/delete/{department}', [App\Http\Controllers\DepartmentController::class, 'destroy'])->name('department.destroy');
 
 Route::get('department', [App\Http\Controllers\DepartmentController::class, 'index'])->name('department.index');
+
+// Department routes
+Route::post('user/store', [App\Http\Controllers\UserController::class, 'store'])->name('user.save');
+
+Route::get('user/show/{user}', [App\Http\Controllers\UserController::class, 'show'])->name('user.show');
+
+// Route::delete('user/delete/{user}', [App\Http\Controllers\UserController::class, 'destroy'])->name('user.destroy');
+
+Route::get('officers', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
+
+Route::get('retiring', [App\Http\Controllers\PersonnelController::class, 'getRetiringPersonnel'])->name('personnel.retiring');
